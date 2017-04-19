@@ -1,0 +1,34 @@
+<style>
+.item-toggle .toggle {
+	top:3px;
+}
+</style>
+<ul id="menu">
+<li><a href="#/list">[ALARMS]</a></li>
+<li><a href="#/stats">[TRACKING]</a></li>
+</ul>
+<div class="overlay">
+<div class="mainContent">
+<h1 id="settingsH1">Settings</h1>
+<ion-list id="settingsList">
+<li class="item item-toggle">
+     24 Hour Time Enabled
+     <label class="toggle toggle-calm">
+       <input type="checkbox" class="myToggle" ng-model="hourSetting" ng-click="toggleHour(hourSetting)" ng-checked="{{hourSaved}}">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li>
+    Clear Stats
+    <p> This will reset all tallied stats </p>
+    <a href="#/settings" ng-click="clearStats()" id="clearStats">CLEAR</a>
+  </li>
+</ion-list>
+
+</div>
+</div>
+<a href="#/home" class="goHome"><</a>
+
+

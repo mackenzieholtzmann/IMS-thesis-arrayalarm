@@ -1,0 +1,111 @@
+<ul id="menu">
+<li style="background-color:rgba(255,255,255,0.05);"><a href="#/list">[ALARMS]</a></li>
+<li><a href="#/stats">[TRACKING]</a></li>
+</ul>
+<div class="overlay">
+<div class="mainContent">
+<ion-list id="alarms">
+ <li class="item item-toggle" ng-repeat="myAlarm in myAlarms">
+     <a href="#/edit/{{myAlarm.Id}}">[{{myAlarm.Name}}]</a>
+     <ul id="timeList">
+     <li ng-repeat="Time in myAlarm.Times" class="alarmTimes">
+    {{Time.Hour}}:{{Time.Min}}{{Time.AMPM}}</li>
+   </ul>
+     <label class="toggle toggle-calm">
+       <input type="checkbox" class="myToggle" ng-model="alarmChange" id="{{myAlarm.Id}}" ng-click="toggleStatus($event, alarmChange)" ng-checked="{{myAlarm.Status}}">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+
+  </li>
+</ion-list>
+
+<a href="#/add">ADD NEW +</a>
+
+</div>
+</div>
+<a href="#/home" class="goHome"><</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ng-model="vm.turnClearAppData" ng-true-value="'On'" ng-false-value="'Off'" ng-change="vm.showConfirm(vm.turnClearAppData)">
+
+*************************************
+ng-change="toggleChange(alarmChange)"
+
+
+
+
+        <div class="item item-divider"> 
+          Notifications
+        </div>
+        
+        <ion-toggle ng-model="pushNotification.checked"
+                    ng-change="pushNotificationChange()">
+          Push Notifications
+        </ion-toggle>
+        
+       
+
+
+ function toggleStatus(e){
+    console.log(e.currentTarget.name);
+  };
+
+
+
+  document.getElementsByClassName("myToggle").addEventListener("click", toggleStatus(), false);
+
+
+
+
+
+
+Code that was recording values in JSON
+
+<ion-list id="alarms">
+
+	<ion-toggle ng-repeat="myAlarm in myAlarms"
+                    ng-model="alarmToggle.value" 
+                    ng-true-value="'Alarm On'"
+                    ng-false-value="'Alarm Off'">
+          <p id="alarmLabel">{{myAlarm.name}} <pre ng-bind="alarmToggle | json"></pre> </p>
+				<p id="alarmTimes">{{myAlarm.times}}</p>
+        </ion-toggle>
+
+</ion-list>
+
+
+
+
+
+
+
+WAS WORKING
+
+	<ion-toggle ng-repeat="myAlarm in myAlarms"
+                    ng-Model="toggleStatus"
+                    checked="true">
+
+          <p id="alarmLabel">{{myAlarm.name}}{{myAlarm.state}}</p>
+				<p id="alarmTimes">{{myAlarm.times}}</p>
+        </ion-toggle>
+
+-->

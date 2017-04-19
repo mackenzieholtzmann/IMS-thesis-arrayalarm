@@ -1,0 +1,61 @@
+<ul id="menu">
+<li style="background-color:rgba(255,255,255,0.05)"><a href="#/list">[ALARMS]</a></li>
+<li><a href="#/stats">[TRACKING]</a></li>
+</ul>
+<div class="overlay">
+<div class="mainContent">
+<h1 id="newAlarm">New Alarm</h1>
+
+
+<form id="alarmForm">
+	<label>NAME:</label><input type="text" name="addname" ng-model="addName">
+	<label>ADD TIMES:</label><input type="number" id="addHour" name="addhour" ng-model="addHour">
+	<p id="colon">:</p>
+	<input type="number" name="addmin" id="addMin" ng-model="addMin">
+
+	 <label><input type="radio" id="am" ng-model="time.ampm" value="AM"/>AM</label><br>
+ 	 <label><input type="radio" id-"pm" ng-model="time.ampm" value="PM"/>PM</label><br>
+<input type="submit" ng-click="addTime()" value="ADD" />
+<div id="result">
+<ul>
+	<label>TIMES:</label>
+     <li ng-repeat="WakeTime in WakeTimes" id="{{WakeTime.Id}}" class="wakeTimes" ng-click="removeTime($event)">
+     {{WakeTime.Hour}}:{{WakeTime.Min}}{{WakeTime.AMPM}} x</li>
+   </ul>
+
+</div>
+	<a href="#/list" ng-click="cancel()" id="cancelButton">CANCEL</a>
+	<input type="submit" ng-click="addAlarm(time)" value="SAVE" />
+
+	
+
+</form>
+
+
+<ul>
+<li ng-repeat="alarm in alarms">
+
+</li>
+
+</ul>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

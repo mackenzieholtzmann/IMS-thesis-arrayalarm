@@ -1,0 +1,18 @@
+<ul id="menu">
+<li><a href="#/list">[ALARMS]</a></li>
+<li><a href="#/stats">[TRACKING]</a></li>
+</ul>
+<div class="overlay">
+<div class="mainContent">
+<h1 id="statsH1">Stats</h1>
+
+<ion-list id="stats">
+ <li ng-repeat="stat in stats">
+ 	<div id="statTitle">{{stat.Name}}</div>
+ 	<div id="statValue">{{stat.Value}}</div>
+  </li>
+</ion-list>
+
+</div>
+</div>
+<a href="#/home" class="goHome"><</a>
